@@ -1,0 +1,13 @@
+{
+  "client": {
+    "server": "irc.efnet.nl",
+    "nick": "Nickname",
+    "channels": [
+      "#bot-test-channel"
+    ]
+  },
+  "plugins": [
+    "logger",
+    "sl"
+  ]
+}

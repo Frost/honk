@@ -1,0 +1,10 @@
+{
+  "apiKeys": {
+    "getSite": "YOUR_GETSITE_API_KEY",
+    "reseplanerare": "YOUR_GETSITE_API_KEY"
+  },
+  "urls": {
+    "getSite": "https://api.trafiklab.se/sl/realtid/GetSite",
+    "reseplanerare": "https://api.trafiklab.se/sl/reseplanerare"
+  }
+}

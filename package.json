@@ -1,0 +1,19 @@
+{
+  "name": "hink",
+  "version": "0.1.0",
+  "author": "Martin Frost",
+  "contributors": [
+    "Martin Frost <frost@ceri.se>"
+  ],
+  "dependencies": {
+    "q": "0.9.x",
+    "irc": "0.3.x",
+    "xml2js": "0.2.x",
+    "request": "2.21.x",
+    "coffee-script": "1.6.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+
