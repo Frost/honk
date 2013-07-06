@@ -1,4 +1,5 @@
 request = require 'request'
+{inspect} = require 'util'
 Q = require 'q'
 config = require '../config/github'
 
@@ -18,7 +19,8 @@ class GitHub
       @_prepareRequest @_getRepo, @repo_regex, message, 1, 4
     else if @user_regex.test message
       @_prepareRequest @_getUser, @user_regex, message, 1, 2
-    else return Q ""
+    else
+      return "Message doesn't match any RegExp"
 
   _getIssue: (owner, repo, issue) =>
     return @_githubRequest("repos/#{owner}/#{repo}/issues/#{issue}")
