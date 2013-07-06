@@ -1,5 +1,4 @@
 request = require 'request'
-{inspect} = require 'util'
 {parseString: parseXml} = require 'xml2js'
 Q = require 'q'
 config = require '../config/sl'
