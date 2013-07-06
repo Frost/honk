@@ -1,0 +1,10 @@
+{
+  "url": "https://api.github.com",
+  "apiKey": "",
+  "prefix": "[GitHub]",
+  "regexen": {
+    "issue": "gh:(\\w+)\\/(\\w+)#(\\d+)",
+    "repo": "gh:(\\w+)\\/(\\w+)",
+    "user": "gh:(\\w+)"
+  }
+}
