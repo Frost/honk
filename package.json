@@ -10,10 +10,11 @@
     "irc": "0.3.x",
     "xml2js": "0.2.x",
     "request": "2.21.x",
-    "coffee-script": "1.6.x"
+    "coffee-script": "1.6.x",
+    "twitter-text": "~1.6.1",
+    "yql": "~0.4.8"
   },
   "scripts": {
     "start": "node index.js"
   }
 }
-
