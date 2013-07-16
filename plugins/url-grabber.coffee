@@ -20,5 +20,5 @@ parseUrls = (message) ->
 
 module.exports = exports =
   message: (from, to, message) ->
-    parseUrls(message.)done (results) =>
+    parseUrls(message).done (results) =>
       results.forEach (r) => @say to, "[URL] #{from}: #{r.title} - #{r.url}"
