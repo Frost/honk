@@ -8,6 +8,8 @@
   },
   "plugins": [
     "logger",
-    "sl"
+    "sl",
+    "url-grabber",
+    "rksmrgs"
   ]
 }
