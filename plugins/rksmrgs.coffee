@@ -9,6 +9,11 @@ uniq = (value, index, self) -> index is self.indexOf value
 sortFile = -> Q.nfcall(exec, "sort -u #{filename} -o #{filename}")
 isRksmrgs = (word) ->
   word.toLowerCase().replace(/[^åäö]/g, '').split('').filter(uniq).length is 3
+newRksmrgs = (words) ->
+  readFile().then (rksmrgsr) ->
+    return Q.resolve words.filter (word) ->
+      isRksmrgs(word) and word not in rksmrgsr
+      
 
 addToFile = (words) ->
   return Q.nfcall(fs.appendFile, filename, words.join("\n") + "\n")
@@ -29,6 +34,6 @@ module.exports = exports =
     if /^!(?:räksmörgås|skaldjursmacka)/.test message
       getRandomRksmrgs().done (rksmrgs) => @say to, rksmrgs
     else
-      rksmrgsr = message.split(" ").filter isRksmrgs
-      addToFile(rksmrgsr).done console.log if rksmrgsr.length > 0
+      newRksmrgs(message.split(" ")).then (rksmrgsr) ->
+        addToFile(rksmrgsr).done console.log if rksmrgsr.length > 0
 
