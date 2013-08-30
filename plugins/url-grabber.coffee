@@ -5,7 +5,7 @@ Q = require 'q'
 extractTitle = (url) ->
   deferred = Q.defer()
   yql "select * from html where url='#{url}' and xpath='//title'", (json) ->
-    if json
+    if json and json.query.results?
       deferred.resolve
         url: url
         title: json.query.results.title
