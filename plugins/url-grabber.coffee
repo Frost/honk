@@ -2,10 +2,12 @@ Q = require 'q'
 {extractUrls} = require 'twitter-text'
 {exec: yql} = require 'yql'
 
+compact = (array) -> elem for elem in array when elem
+
 extractTitle = (url) ->
   deferred = Q.defer()
   yql "select * from html where url='#{url}' and xpath='//title'", (json) ->
-    if json and json.query.results?
+    if json and json.query.results?.title?
       deferred.resolve
         url: url
         title: json.query.results.title
@@ -21,5 +23,4 @@ parseUrls = (message) ->
 module.exports = exports =
   message: (from, to, message) ->
     parseUrls(message).done (results) =>
-      results.forEach (r) => @say to, "[URL] #{from}: #{r.title} - #{r.url}"
-
+      compact(results).forEach (r) => @say to, "[URL] #{from}: #{r.title} - #{r.url}"
