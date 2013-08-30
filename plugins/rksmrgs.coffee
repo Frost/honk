@@ -31,7 +31,7 @@ getRandomRksmrgs = ->
 
 module.exports = exports =
   message: (from, to, message) ->
-    if /^!(?:räksmörgås|skaldjursmacka)/.test message
+    if /^!(?:räksmörgås|skaldjursmacka|rÃ¤ksmÃ¶rgÃ¥s)/.test message
       getRandomRksmrgs().done (rksmrgs) => @say to, rksmrgs
     else
       newRksmrgs(message.split(" ")).then (rksmrgsr) ->
