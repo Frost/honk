@@ -29,8 +29,8 @@ getRandomRksmrgs = ->
   .then (rksmrgsr) ->
     return Q rksmrgsr[Math.floor Math.random() * rksmrgsr.length]
 
-module.exports = exports =
-  message: (from, to, message) ->
+module.exports = exports = (client) ->
+  client.addListener 'message', (from, to, message) ->
     if /^!(?:räksmörgås|skaldjursmacka|rÃ¤ksmÃ¶rgÃ¥s)/.test message
       getRandomRksmrgs().done (rksmrgs) => @say to, rksmrgs
     else

@@ -44,9 +44,9 @@ class SL
 
 sl = new SL config
 
-module.exports = exports =
-  message: (from, to, message) ->
+module.exports = exports = (client) ->
+  client.addListener 'message', (from, to, message) ->
     if /^!sl \w+ \w+/.test message
       [_, origin, destination] = message.split /\s+/
-      sl.lookupRoute(origin, destination).done (output) => @say from, output
+      sl.lookupRoute(origin, destination).done (output) => @say to, "#{from}: #{output}"
 

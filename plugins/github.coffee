@@ -46,7 +46,7 @@ requestOptions = (url) ->
     "User-Agent": "Honk IRC-bot"
 
 gh = new GitHub config
-module.exports = exports =
-  message: (from, to, message) ->
+module.exports = exports = (client) ->
+  client.addListener 'message', (from, to, message) ->
     gh.perform(to, message).done (output) => @say to, output
 

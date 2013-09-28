@@ -20,7 +20,7 @@ parseUrls = (message) ->
   return Q.allSettled(extractUrls(message).map extractTitle).then (results) ->
     return results.map (result) -> result.value
 
-module.exports = exports =
-  message: (from, to, message) ->
+module.exports = exports = (client) ->
+  client.addListener 'message', (from, to, message) ->
     parseUrls(message).done (results) =>
       compact(results).forEach (r) => @say to, "[URL] #{from}: #{r.title} - #{r.url}"
