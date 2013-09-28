@@ -2,3 +2,5 @@ config/*.json
 node_modules/*
 tags
 rksmrgs.txt
+feedsState.json
+config/feeds.json

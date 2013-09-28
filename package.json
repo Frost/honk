@@ -12,7 +12,9 @@
     "request": "2.21.x",
     "coffee-script": "1.6.x",
     "twitter-text": "~1.6.1",
-    "yql": "~0.4.8"
+    "yql": "~0.4.8",
+    "rssparser": "~0.0.4",
+    "moment": "2.2.1"
   },
   "scripts": {
     "start": "node index.js"

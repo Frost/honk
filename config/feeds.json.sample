@@ -1,0 +1,11 @@
+{
+  "stateFile": "feedsState.json",
+  "checkInterval": 20000,
+  "feeds": [
+    {
+      "name": "datasektionen",
+      "url": "http://www.datasektionen.se/rss",
+      "channels": ["#honk-test"]
+    }
+  ]
+}
